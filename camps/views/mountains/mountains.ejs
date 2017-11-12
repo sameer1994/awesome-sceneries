@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class = "container">
+    <header class= "jumbotron">
+        <div class="container">
+        <h1>Welcome Here!</h1>
+        <p>Have a look at some of the most scenic places around the world!</p>
+        <a class="btn btn-primary btn-large" href="mountains/new">Want to add some places</a>
+        </div>
+    </header>
+    <div class="row" style="display:flex; flex-wrap:wrap;">
+    <% mountains.forEach(function (mountain){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail" style="display:inline-block">
+            <img src="<%=mountain.image%>">
+            <div class="caption">
+                <h4><%=mountain.name%></h4>
+            </div>
+            <div>
+                <p>
+                    <a href="/mountains/<%=mountain._id%>" class="btn btn-primary">More Info</a>
+                <p>
+            </div>
+        </div>
+    </div>
+    <%})%>
+    </div>
+<% include ../partials/footer %>
